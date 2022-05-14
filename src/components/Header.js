@@ -6,8 +6,8 @@ const Header = ()=> {
                 <h3>Never pack from wrong clothes again!</h3>
             </div>
             <div className='header-right'>
-                <button>Log In</button>
-                <button>Sign Up</button>
+                <button className='login'>Log In</button>
+                <button className='signup'>Sign Up</button>
             </div>
         </div>
     )
