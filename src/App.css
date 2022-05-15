@@ -7,6 +7,11 @@
 .header-left{
   text-align: left;
 }
+.header-title{
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+}
 
 .login{
   display: block;
@@ -20,3 +25,38 @@
   width: 100px;
   height: 50px;
 }
+
+.main{
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 800px;
+  height: 500px;
+}
+
+.main-title{
+  text-align: center;
+  font-size: 25px;
+}
+.main-form{
+  margin-left: 15px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.main-input {
+  width: 750px;
+  height: 40px;
+  margin: 10px 0;
+}
+
+.date-input{
+  height: 40px;
+  margin: 10px 10px 10px 0px;
+  width: 370px;
+}
+
+.main-submit{
+  margin-top: 20px;
+  transform: translateX(255%);
+}
+

@@ -1,8 +1,14 @@
+import {Link} from 'react-router-dom'
+
 const Header = ()=> {
     return(
         <div className='header'>
             <div className='header-left'>
-                <h1>Pack Hacker</h1>
+            <nav>
+            <Link className='header-title' to='/'>
+                <div>Pack Hacker</div>
+            </Link>
+            </nav>
                 <h3>Never pack from wrong clothes again!</h3>
             </div>
             <div className='header-right'>
