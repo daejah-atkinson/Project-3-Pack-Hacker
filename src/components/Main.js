@@ -1,6 +1,8 @@
+import PackingList from './PackingList';
+import CreatePackingList from './CreatePackingList';
+import {Route, Routes} from 'react-router-dom';
 import{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-
 
 const Main = (props) => {
     const navigate = useNavigate()
@@ -18,56 +20,21 @@ const Main = (props) => {
     const handleSubmit = (event)=>{
         event.preventDefault();
         navigate('/packinglist')
-        console.log(list)
+        console.log('list', list)
     };
-
     return(
-        <div className='main'>  
-            <div className='main-title'>
-                <h2>Create your packing list</h2>
-            </div>
-                <form className='main-form' onSubmit={handleSubmit}>
-                    <label>Destination</label>
-                        <br/>
-                            <input
-                                className='main-input'
-                                type='text'
-                                name="destination"
-                                value={list.destination}
-                                placeholder='Where are you going?'
-                                onChange={handleChange}/>
-                        <br/>
-                    <label>Travel Dates</label>
-                        <br/>
-                            <input
-                                className='date-input'
-                                type='date'
-                                name='date1'
-                                value={list.date1}
-                                onChange={handleChange}
-                                />
-                                <input
-                                className='date-input'
-                                type='date'
-                                name='date2'
-                                value={list.date2}
-                                onChange={handleChange}
-                                />
-                        <br/>
-                    <label>List Name</label>
-                        <br/>
-                            <input
-                                className='main-input'
-                                type='text'
-                                name="name"
-                                value={list.name}
-                                placeholder='Create your packing list'
-                                onChange={handleChange}/>
-                        <br/>
-                    <input className='main-submit' type='submit' value='create packing list'/>
-                </form>
-                
-        </div>
+        <Routes>
+          <Route path='/' element={<CreatePackingList
+                                    handleChange={handleChange}
+                                    handleSubmit={handleSubmit}/>}
+                                    list={list}/>
+          <Route path='/packinglist' element={<PackingList
+                                        destination={list.destination}
+                                        date1={list.date1}
+                                        date2={list.date2}
+                                        name={list.name}
+                                            />}/>
+        </Routes>
     )
 }
 
