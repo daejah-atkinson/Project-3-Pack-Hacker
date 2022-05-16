@@ -60,3 +60,29 @@
   transform: translateX(255%);
 }
 
+.created-list-title{
+  text-align: center;
+}
+
+.list-container{
+  border: 1px solid black;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.listitem-container{
+  border: 2px solid black;
+}
+
+.list-header{
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.listitem{
+  border: 1px solid black;
+}

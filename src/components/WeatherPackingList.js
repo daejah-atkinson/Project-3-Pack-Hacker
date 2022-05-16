@@ -24,7 +24,7 @@ const WeatherPackingList = (props) =>{
     const Loaded = () =>{
         return(
             <div>
-                <h1>{props.name}</h1>
+                <h1 className='created-list-title'>{props.name}</h1>
                 <CreatedList
                     weather={weather}/>
             </div>

@@ -1,6 +1,6 @@
+import Clothing from "./Clothing"
 
 const CreatedList = (props) =>{
-    console.log('newest', props)
     let info = []
     const Loaded = () =>{
         let theWeather = props.weather.DailyForecasts
@@ -15,19 +15,13 @@ const CreatedList = (props) =>{
         var dateString = months[date.getMonth()] + ' ' + ("00" + date.getDate()).slice(-2)  + ', ' + date.getFullYear() 
 
         console.log(str)
-         info.push(`On ${dateString} it will be ${newWeather.Day.IconPhrase}. `)
-
-        if(newWeather.Day.HasPrecipitation === true && newWeather.Day.PrecipitationType === 'Rain'){
-           info.push(`On ${dateString} It's also going to rain. `)
-        }  console.log(info) 
+         info.push(`Date: ${dateString}. Weather: ${newWeather.Day.IconPhrase}. Temperature: max - ${newWeather.Temperature.Maximum.Value} min - ${newWeather.Temperature.Minimum.Value} `)
     }
+        
         return(
-            <div>
-                <h1>CreatedList</h1>
+            <div className='list-container'>
                 <p>{info}</p>
-                <div className='packing-container'>
-                <h3>Socks</h3>
-                </div>
+                <Clothing/>
             </div>
             )
         }   
