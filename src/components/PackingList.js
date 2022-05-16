@@ -3,8 +3,8 @@ import WeatherPackingList from './WeatherPackingList';
 
 
 const PackingList = (props) =>{
-    // const apiKey = process.env.REACT_APP_API_KEY;
-    const URL = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=aC9Gu4rBHnWD8x9wJr0jX3zsz6xyCZ5S&q=${props.destination}`;
+    const apiKey = process.env.REACT_APP_API_KEY;
+    const URL = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${props.destination}`;
     
     const [key, setKey] = useState([]);
 

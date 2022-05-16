@@ -1,14 +1,13 @@
 import React, { useEffect, useState} from 'react';
 import CreatedList from './CreatedList';
-import CreatePackingList from './CreatePackingList';
 
 const WeatherPackingList = (props) =>{
     console.log(props)
     const [weather, setWeather] = useState([]);
 
     let newKey = props.key2
-
-    const weatherURL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${newKey}?apikey=aC9Gu4rBHnWD8x9wJr0jX3zsz6xyCZ5S`;
+    const apiKey = process.env.REACT_APP_API_KEY;
+    const weatherURL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${newKey}?apikey=${apiKey}`;
 
     const getWeather = async () => {
         const response = await fetch(weatherURL);
