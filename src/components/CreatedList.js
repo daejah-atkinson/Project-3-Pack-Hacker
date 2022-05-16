@@ -25,6 +25,9 @@ const CreatedList = (props) =>{
             <div>
                 <h1>CreatedList</h1>
                 <p>{info}</p>
+                <div className='packing-container'>
+                <h3>Socks</h3>
+                </div>
             </div>
             )
         }   
@@ -33,7 +36,7 @@ const CreatedList = (props) =>{
             return <h1>Loading...</h1>;
         };
         
-        return props.weather ? Loaded() : loading();
+        return props.weather.DailyForecasts ? Loaded() : loading();
 }
 
 export default CreatedList;
