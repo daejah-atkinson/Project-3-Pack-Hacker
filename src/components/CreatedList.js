@@ -1,4 +1,5 @@
 import Clothing from "./Clothing"
+import ToDo from "./ToDo"
 
 const CreatedList = (props) =>{
     // let info = []
@@ -26,6 +27,9 @@ const CreatedList = (props) =>{
         return(
             <div className='list-container'>
                 {/* <p>{info}</p> */}
+                <ToDo
+                date1={props.date1}
+                date2={props.date2}/>
                 <Clothing
                     // info={info}
                     weather={weather}

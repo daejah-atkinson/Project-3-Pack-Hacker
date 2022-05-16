@@ -26,7 +26,9 @@ const WeatherPackingList = (props) =>{
             <div>
                 <h1 className='created-list-title'>{props.name}</h1>
                 <CreatedList
-                    weather={weather}/>
+                    weather={weather}
+                    date1={props.date1}
+                    date2={props.date2}/>
             </div>
             )
         }   
