@@ -1,7 +1,5 @@
-
-
 const CreatePackingList = (props) =>{
-    console.log('create', props)
+    console.log(props)
     return(
         <div className='main'>  
             <div className='main-title'>

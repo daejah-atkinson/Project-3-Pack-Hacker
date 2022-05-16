@@ -20,7 +20,6 @@ const Main = (props) => {
     const handleSubmit = (event)=>{
         event.preventDefault();
         navigate('/packinglist')
-        console.log('list', list)
     };
     return(
         <Routes>

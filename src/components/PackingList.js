@@ -1,9 +1,10 @@
 import React, { useEffect, useState} from 'react';
+import WeatherPackingList from './WeatherPackingList';
+
 
 const PackingList = (props) =>{
-    const apiKey = process.env.REACT_APP_API_KEY;
-
-    const URL = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${props.destination}`;
+    // const apiKey = process.env.REACT_APP_API_KEY;
+    const URL = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=aC9Gu4rBHnWD8x9wJr0jX3zsz6xyCZ5S&q=${props.destination}`;
     
     const [key, setKey] = useState([]);
 
@@ -15,35 +16,28 @@ const PackingList = (props) =>{
     };
 
     useEffect(() => {
-        getKey(); // eslint-disable-next-line
+        getKey(); // eslint-disable-next-line 
     }, []); 
-    
-  
-    let newKey = key[0].Key;
 
-    const weatherURL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${newKey}apikey=${apiKey}`;
 
-    const [weather, setWeather] = useState([]);
 
-    const getWeather = async () => {
-        const response = await fetch(weatherURL);
-        const data = await response.json();
-        console.log(data);
-        setWeather(data);
-    };
-
-    
-    useEffect(() => { 
-        getWeather(); // eslint-disable-next-line
-    }, []); 
-    
-    console.log('weather', weather);
+    const Loaded = () =>{
+       const myKey = key[0].Key
     return(
         <div>
-            <h1>{props.name}</h1>
-            <h1>{props.destination}</h1>
+            <WeatherPackingList
+                key={myKey}
+                name={props.name}
+                key2={myKey}/>
         </div>
-    )
+        )
+    }   
+
+    const loading = () => {
+        return <h1>Loading...</h1>;
+    };
+    
+    return key[0] ? Loaded() : loading();
 }
 
 export default PackingList;
