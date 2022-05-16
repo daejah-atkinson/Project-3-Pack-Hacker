@@ -1,5 +1,5 @@
 
-const Clothing = () => {
+const Clothing = (props) => {
     const clothes = [
         {
             weather: 'all',
@@ -57,8 +57,9 @@ const Clothing = () => {
                        <label for='item'>{item.clothing} </label>
                     </div>
                 )
-            } else if(item.weather === 'sunny'){
-                console.log("sunny", item.clothing)
+            } if(item.weather === 'sunny' ){
+                console.log("sunny", item.clothing, props.maxtemp.includes('90'))
+                console.log(props.maxtemp)
             }
            
         })}
