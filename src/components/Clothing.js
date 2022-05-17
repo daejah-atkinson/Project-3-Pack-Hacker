@@ -3,63 +3,90 @@ const Clothing = (props) => {
     const clothes = [
         {
             weather: 'all',
-            clothing: 'underwear'
+            clothing: 'Underwear'
         },
         {
             weather: 'all',
-            clothing: 'socks'
+            clothing: 'Socks'
         },
         {
             weather: 'all',
-            clothing: 'tops'
+            clothing: 'Tops'
         },
         {
             weather: 'all',
-            clothing: 'pants'
+            clothing: 'Pants'
         },
         {
             weather: 'all',
-            clothing: 'hat/cap'
+            clothing: 'Hat/cap'
         },
         {
             weather: 'all',
-            clothing: 'shoes'
+            clothing: 'Shoes'
         },
         {
             weather: 'all',
-            clothing: 'jackets'
+            clothing: 'Jackets'
         },
         {
             weather: 'all',
-            clothing: 'pjs'
+            clothing: 'Pjs'
         },
         {
             weather: 'sunny',
-            clothing: 'shorts'
+            clothing: 'Shorts'
         },
         {
             weather: 'sunny',
-            clothing: 'swimsuit'
+            clothing: 'Swimsuit'
         },
-
-
-
+        {
+            weather: 'cold',
+            clothing: 'Scarf'
+        },
+        {
+            weather: 'cold',
+            clothing: 'Gloves'
+        },
+        {
+            weather: 'cold',
+            clothing: 'Winter coat'
+        }
     ];
+
     return(
         <div className='listitem-container'>
-            <h2 className='list-header'>Clothing</h2>
+            <div className='list-header'><h2 >Clothing</h2></div> 
         {clothes.map((item)=>{
             if(item.weather === 'all'){
-                console.log(item)
                 return(
+                    <>
                     <div className='listitem'>
                        <input type='checkbox' id='item'/>
-                       <label for='item'>{item.clothing} </label>
+                       <label for='item'> {item.clothing} </label>
                     </div>
+                    </>
                 )
-            } if(item.weather === 'sunny' ){
-                console.log("sunny", item.clothing, props.maxtemp.includes('90'))
-                console.log(props.maxtemp)
+            } if(item.weather === 'sunny' && props.maxtemp > 75 ){
+                return(
+                    <>
+                    <div className='listitem'>
+                       <input type='checkbox' id='item'/>
+                       <label for='item'> {item.clothing} </label>
+                    </div>
+                    </>
+                )
+            }
+            if(item.weather === 'cold' && props.mintemp < 50 ){
+                return(
+                    <>
+                    <div className='listitem'>
+                       <input type='checkbox' id='item'/>
+                       <label for='item'> {item.clothing} </label>
+                    </div>
+                    </>
+                )
             }
            
         })}

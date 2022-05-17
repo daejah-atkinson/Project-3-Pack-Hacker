@@ -1,4 +1,8 @@
-
+body{
+  margin-bottom: 20px;
+  background: rgb(221,184,146);
+  background: linear-gradient(0deg, rgba(221,184,146,0.7315519957983193) 0%, rgba(148,203,233,1) 100%);
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -10,74 +14,103 @@
 .header-title{
   color: black;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 45px;
+  font-family: 'Koulen', cursive;
+}
+
+.subtitle{
+  margin-top: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .login{
   display: block;
   order:1;
-  width: 100px;
-  height: 50px;
+  width: 65px;
+  height: 25px;
   margin-bottom: 10px;
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
 }
 .signup{
   order:2;
-  width: 100px;
-  height: 50px;
+  width: 65px;
+  height: 25px;
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
 }
 
 .main{
-  border: 1px solid black;
+  border-radius: 20px;
   margin: 0 auto;
   width: 800px;
   height: 500px;
+  background-color: white;
+
 }
 
 .main-title{
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   font-size: 25px;
+  padding-top: 5px;
 }
 .main-form{
+  font-family: 'Roboto', sans-serif;
   margin-left: 15px;
   margin-bottom: 10px;
   font-size: 20px;
 }
 
 .main-input {
+  font-family: 'Roboto', sans-serif;
   width: 750px;
   height: 40px;
   margin: 10px 0;
 }
 
 .date-input{
+  font-family: 'Roboto', sans-serif;
   height: 40px;
   margin: 10px 10px 10px 0px;
   width: 370px;
 }
 
 .main-submit{
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
-  transform: translateX(255%);
+  font-family: 'Roboto', sans-serif;
+  width: 150px;
+  height: 50px;
+  transform: translateX(300px);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
 }
 
 .created-list-title{
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .list-container{
-  border: 1px solid black;
   width: 80%;
-  height: 80%;
   margin: 0 auto;
 }
 
 .listitem-container{
   border: 2px solid black;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
 }
 
 .list-header{
-  border-bottom: 1px solid black;
-  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid black;
+  padding-left: 10px;
   height: 50px;
   display: flex;
   align-items: center;
@@ -85,8 +118,10 @@
 
 .listitem{
   border: 1px solid black;
+  padding-left: 5px;
 }
 
 .todo-p {
   margin-left: 20px;
 }
+

@@ -2,7 +2,6 @@ import React, { useEffect, useState} from 'react';
 import CreatedList from './CreatedList';
 
 const WeatherPackingList = (props) =>{
-    console.log(props)
     const [weather, setWeather] = useState([]);
 
     let newKey = props.key2
@@ -12,7 +11,6 @@ const WeatherPackingList = (props) =>{
     const getWeather = async () => {
         const response = await fetch(weatherURL);
         const data = await response.json();
-        console.log(data);
         setWeather(data);
     };
 

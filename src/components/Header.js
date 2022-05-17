@@ -9,7 +9,7 @@ const Header = ()=> {
                 <div>Pack Hacker</div>
             </Link>
             </nav>
-                <h3>Never pack the wrong clothes again!</h3>
+                <h3 className='subtitle'>Never pack the wrong clothes again!</h3>
             </div>
             <div className='header-right'>
                 <button className='login'>Log In</button>
