@@ -86,3 +86,7 @@
 .listitem{
   border: 1px solid black;
 }
+
+.todo-p {
+  margin-left: 20px;
+}
