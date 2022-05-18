@@ -170,6 +170,8 @@ body{
   padding-left: 5px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height:25px;
 }
 
 .delete-button{
@@ -181,6 +183,20 @@ body{
   border: none;
   background-color: white;
   cursor: pointer;
+}
+
+.new-item {
+  border: none;
+  margin-left: 5px;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+.add-item{
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  margin-right: 6px;
+  font-size: 15px;
 }
 
 .todo-p {

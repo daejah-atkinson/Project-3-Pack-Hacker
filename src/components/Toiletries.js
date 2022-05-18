@@ -61,6 +61,12 @@ const Toiletries = (props) => {
                     </div>
                 )})}
             </>
+            <div className='listitem'>
+                <form>
+                    <input className = 'new-item' type='text' placeholder="Add new item"/>
+                    <button className='add-item'>+</button>
+                </form>
+            </div>
         </div>
     )
 }

@@ -11,10 +11,10 @@ const Header = ()=> {
             </nav>
                 <h3 className='subtitle'>Never pack the wrong clothes again!</h3>
             </div>
-            <div className='header-right'>
+            {/* <div className='header-right'>
                 <button className='login'>Log In</button>
                 <button className='signup'>Sign Up</button>
-            </div>
+            </div> */}
         </div>
     )
 }

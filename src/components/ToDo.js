@@ -8,7 +8,7 @@ const ToDo = (props)=>{
     let difference = dateTwo.getTime() - dateOne.getTime()
     let days = difference / (1000 * 3600 * 24)
 
-    const [item, setItem] = useState([])
+    const [toDoItem, setToDoItem] = useState([])
 
     const todo = [
         {
@@ -52,6 +52,12 @@ const ToDo = (props)=>{
                     </div>
                 )})}
             </>
+            <div className='listitem'>
+                <form>
+                    <input className = 'new-item' type='text' placeholder="Add new item"/>
+                    <button className='add-item'>+</button>
+                </form>
+            </div>
         </div>
     )
 }

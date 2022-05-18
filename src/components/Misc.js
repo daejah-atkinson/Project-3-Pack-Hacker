@@ -35,8 +35,6 @@ const Misc = (props) =>{
         },
     ]
 
-    console.log(props.weather)
-
     return(
         <div className='listitem-container'>
             <div className='list-header'>
@@ -74,6 +72,12 @@ const Misc = (props) =>{
                 }
                
             })}
+            <div className='listitem'>
+                <form>
+                    <input className = 'new-item' type='text' placeholder="Add new item"/>
+                    <button className='add-item'>+</button>
+                </form>
+            </div>
         </div>
 
     )

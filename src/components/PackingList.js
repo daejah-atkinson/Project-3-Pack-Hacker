@@ -11,7 +11,6 @@ const PackingList = (props) =>{
     const getKey = async () => {
         const response = await fetch(URL);
         const data = await response.json();
-        console.log('data',data);
         setKey(data);
     };
 

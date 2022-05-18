@@ -1,3 +1,4 @@
+import {useState} from 'react'
 
 const Clothing = (props) => {
     const clothes = [
@@ -54,21 +55,24 @@ const Clothing = (props) => {
             clothing: 'Winter coat'
         }
     ];
+    const [clothing, setClothing] = useState([])
+
+    const removeOne = (idx1) => document.getElementById(`id-${idx1}`).remove();
 
     return(
         <div className='listitem-container'>
             <div className='list-header'><h2 >Clothing</h2></div> 
-        {clothes.map((item)=>{
+        {clothes.map((item, idx1)=>{
             if(item.weather === 'all'){
                 return(
                     <>
-                    <div className='listitem'>
+                    <div key={idx1} id={`id-${idx1}`} className='listitem'>
                         <div className="listitem-name"> 
                             <input type='checkbox' id='item'/>
                             <label class="strikethrough" for='item'> {item.clothing} </label>
                         </div>
                         <div className='delete-button'>
-                            <button>&#x1F5D1;</button>
+                            <button onClick={() => removeOne(idx1)}>&#x1F5D1;</button>
                         </div>
                     </div>
                     </>
@@ -76,13 +80,13 @@ const Clothing = (props) => {
             } if(item.weather === 'sunny' && props.maxtemp > 75 ){
                 return(
                     <>
-                    <div className='listitem'>
+                    <div key={idx1} id={`id-${idx1}`} className='listitem'>
                         <div className="listitem-name">
                             <input type='checkbox' id='item'/>
                             <label class="strikethrough" for='item'> {item.clothing} </label>
                         </div>
                         <div className='delete-button'>
-                            <button>&#x1F5D1;</button>
+                            <button onClick={() => removeOne(idx1)}>&#x1F5D1;</button>
                         </div>
                     </div>
                     </>
@@ -91,13 +95,13 @@ const Clothing = (props) => {
             if(item.weather === 'cold' && props.mintemp < 50 ){
                 return(
                     <>
-                    <div className='listitem'>
+                    <div key={idx1} id={`id-${idx1}`} className='listitem'>
                         <div className="listitem-name">
                             <input type='checkbox' id='item'/>
                             <label class="strikethrough" for='item'> {item.clothing} </label>
                         </div>
                         <div className='delete-button'>
-                            <button>&#x1F5D1;</button>
+                            <button onClick={() => removeOne(idx1)}>&#x1F5D1;</button>
                         </div>
                     </div>
                     </>
@@ -105,6 +109,12 @@ const Clothing = (props) => {
             }
            
         })}
+            <div className='listitem'>
+                <form>
+                    <input className = 'new-item' type='text' placeholder="Add new item"/>
+                    <button className='add-item'>+</button>
+                </form>
+            </div>
         </div>
     )
     
