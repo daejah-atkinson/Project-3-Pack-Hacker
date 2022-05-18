@@ -72,8 +72,8 @@ const Misc = (props) =>{
                 }
                
             })}
-            <div className='listitem'>
-                <form>
+            <div>
+                <form className='listitem'>
                     <input className = 'new-item' type='text' placeholder="Add new item"/>
                     <button className='add-item'>+</button>
                 </form>

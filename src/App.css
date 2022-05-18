@@ -209,6 +209,10 @@ input[type=checkbox]:checked + label.strikethrough{
   text-decoration: line-through;
 }
 
+.new-item-form{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 
