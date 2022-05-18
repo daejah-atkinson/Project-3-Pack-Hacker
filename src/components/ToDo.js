@@ -1,3 +1,5 @@
+import {useState} from 'react'
+
 const ToDo = (props)=>{
     let date2 = props.date2
     let date1 = props.date1
@@ -5,34 +7,55 @@ const ToDo = (props)=>{
     let dateOne = new Date(date1)
     let difference = dateTwo.getTime() - dateOne.getTime()
     let days = difference / (1000 * 3600 * 24)
+
+    const [item, setItem] = useState([])
+
+    const todo = [
+        {
+            item: "Water the plants"
+        },
+        {
+            item: "Clean out the fridge"
+        },
+        {
+            item: "Charge electronic devices"
+        },
+        {
+            item: "Pause the mail"
+        },
+        {
+            item: "Online Check-in"
+        }
+
+    ];
+
+    const removeOne = (idx) => document.getElementById(`id-${idx}`).remove();
+
     return(
         <div className='listitem-container'>
             <div className='list-header'>
             <h1 >To Do</h1>
             <p className='todo-p'>Things to do before your {days} day trip:</p>
             </div>
-            <div className='listitem'>
-                <input type='checkbox' />
-                <label class="strikethrough" for='item'> Water the plants</label>
-            </div>
-            <div className='listitem'>
-                <input type='checkbox' />
-                <label class="strikethrough" for='item'> Clean out the fridge</label>
-            </div>
-            <div className='listitem'>
-                <input type='checkbox' />
-                <label class="strikethrough" for='item'> Charge electronic devices</label>
-            </div>
-            <div className='listitem'>
-                <input type='checkbox' />
-                <label class="strikethrough" for='item'> Pause the mail</label>
-            </div>
-            <div className='listitem'>
-                <input type='checkbox' />
-                <label class="strikethrough" for='item'> Online Check-in</label>
-            </div>
+            <>
+            {todo.map((item, idx)=>{
+                
+                return(
+                    <div key={idx} id={`id-${idx}`} className='listitem'>
+                        <div className="listitem-name">
+                            <input type='checkbox' />
+                            <label class="strikethrough" for='item'>{item.item}</label>
+                        </div>
+                        <div className='delete-button'>
+                            <button onClick={() => removeOne(idx)} >&#x1F5D1;</button>
+                        </div>
+                    </div>
+                )})}
+            </>
         </div>
     )
 }
 
 export default ToDo;
+
+

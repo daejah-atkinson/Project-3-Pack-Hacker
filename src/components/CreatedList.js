@@ -1,9 +1,9 @@
 import Clothing from "./Clothing";
 import ToDo from "./ToDo";
 import Toiletries from "./Toiletries";
+import Misc from "./Misc";
 
 const CreatedList = (props) =>{
-    // let info = []
     let weather = []
     let maxtemp = []
     let mintemp=[]
@@ -31,6 +31,9 @@ const CreatedList = (props) =>{
                     mintemp={mintempLowest}/>
                     <br/>
                 <Toiletries/>
+                <br/>
+                <Misc
+                weather = {weather}/>
             </div>
             )
         }   

@@ -63,8 +63,13 @@ const Clothing = (props) => {
                 return(
                     <>
                     <div className='listitem'>
-                       <input type='checkbox' id='item'/>
-                       <label class="strikethrough" for='item'> {item.clothing} </label>
+                        <div className="listitem-name"> 
+                            <input type='checkbox' id='item'/>
+                            <label class="strikethrough" for='item'> {item.clothing} </label>
+                        </div>
+                        <div className='delete-button'>
+                            <button>&#x1F5D1;</button>
+                        </div>
                     </div>
                     </>
                 )
@@ -72,8 +77,13 @@ const Clothing = (props) => {
                 return(
                     <>
                     <div className='listitem'>
-                       <input type='checkbox' id='item'/>
-                       <label class="strikethrough" for='item'> {item.clothing} </label>
+                        <div className="listitem-name">
+                            <input type='checkbox' id='item'/>
+                            <label class="strikethrough" for='item'> {item.clothing} </label>
+                        </div>
+                        <div className='delete-button'>
+                            <button>&#x1F5D1;</button>
+                        </div>
                     </div>
                     </>
                 )
@@ -82,8 +92,13 @@ const Clothing = (props) => {
                 return(
                     <>
                     <div className='listitem'>
-                       <input type='checkbox' id='item'/>
-                       <label class="strikethrough" for='item'> {item.clothing} </label>
+                        <div className="listitem-name">
+                            <input type='checkbox' id='item'/>
+                            <label class="strikethrough" for='item'> {item.clothing} </label>
+                        </div>
+                        <div className='delete-button'>
+                            <button>&#x1F5D1;</button>
+                        </div>
                     </div>
                     </>
                 )
