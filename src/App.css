@@ -1,7 +1,7 @@
 body{
   margin-bottom: 20px;
-  background: rgb(221,184,146);
-  background: linear-gradient(0deg, rgba(221,184,146,0.7315519957983193) 0%, rgba(148,203,233,1) 100%);
+  background-color: #f1f1f1;
+  
 }
 .header {
   display: flex;
@@ -12,7 +12,7 @@ body{
   text-align: left;
 }
 .header-title{
-  color: black;
+  color: #248888;
   text-decoration: none;
   font-size: 45px;
   font-family: 'Koulen', cursive;
@@ -21,6 +21,7 @@ body{
 .subtitle{
   margin-top: 0;
   font-family: 'Roboto', sans-serif;
+  color: #475053;
 }
 
 .login{
@@ -48,7 +49,7 @@ body{
   width: 800px;
   height: 500px;
   background-color: white;
-
+  box-shadow: lightgray 2px 2px;
 }
 
 .main-title{
@@ -56,12 +57,14 @@ body{
   text-align: center;
   font-size: 25px;
   padding-top: 5px;
+  color: #475053;
 }
 .main-form{
   font-family: 'Roboto', sans-serif;
   margin-left: 15px;
   margin-bottom: 10px;
   font-size: 20px;
+  color: #475053;
 }
 
 .main-input {
@@ -76,6 +79,7 @@ body{
   height: 40px;
   margin: 10px 10px 10px 0px;
   width: 370px;
+  color: #475053;
 }
 
 .main-submit{
@@ -86,9 +90,52 @@ body{
   width: 150px;
   height: 50px;
   transform: translateX(300px);
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 15px;
+  color: white;
+  background-color: #248888;
+}
+
+.loader{
+  margin: 75px auto;
+  width: 120px;
+  height:75px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.loader span{
+  font-size: 22px;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+.ball{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: black;
+  animation: bounce .5s alternate infinite;
+}
+
+.ball:nth-child(2){
+  animation-delay: .16s;
+}
+
+.ball:nth-child(3){
+  animation-delay: .32s;
+}
+
+@keyframes bounce{
+  from{
+    transform: scaleX(1.25)
+  }
+  to{
+    transform: translateY(-50px) scaleX(1)
+  }
 }
 
 .created-list-title{
@@ -123,5 +170,9 @@ body{
 
 .todo-p {
   margin-left: 20px;
+}
+
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
 }
 

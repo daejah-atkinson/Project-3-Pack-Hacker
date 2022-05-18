@@ -64,7 +64,7 @@ const Clothing = (props) => {
                     <>
                     <div className='listitem'>
                        <input type='checkbox' id='item'/>
-                       <label for='item'> {item.clothing} </label>
+                       <label class="strikethrough" for='item'> {item.clothing} </label>
                     </div>
                     </>
                 )
@@ -73,7 +73,7 @@ const Clothing = (props) => {
                     <>
                     <div className='listitem'>
                        <input type='checkbox' id='item'/>
-                       <label for='item'> {item.clothing} </label>
+                       <label class="strikethrough" for='item'> {item.clothing} </label>
                     </div>
                     </>
                 )
@@ -83,7 +83,7 @@ const Clothing = (props) => {
                     <>
                     <div className='listitem'>
                        <input type='checkbox' id='item'/>
-                       <label for='item'> {item.clothing} </label>
+                       <label class="strikethrough" for='item'> {item.clothing} </label>
                     </div>
                     </>
                 )

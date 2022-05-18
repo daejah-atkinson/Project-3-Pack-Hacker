@@ -36,7 +36,14 @@ const CreatedList = (props) =>{
         }   
     
         const loading = () => {
-            return <h1>Loading...</h1>;
+            return(
+                <div className='loader'>
+                    <div className='ball'></div>
+                    <div className='ball'></div>
+                    <div className='ball'></div>
+                    <span>Loading...</span>
+                </div>
+            );
         };
         
         return props.weather.DailyForecasts ? Loaded() : loading();

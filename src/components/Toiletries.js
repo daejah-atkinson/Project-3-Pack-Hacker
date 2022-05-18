@@ -6,51 +6,51 @@ const Toiletries = (props) => {
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Toothbrush</label>
+                <label class="strikethrough" for='item'>Toothbrush</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Toothpaste</label>
+                <label class="strikethrough" for='item'>Toothpaste</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Deodorant</label>
+                <label class="strikethrough" for='item'>Deodorant</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Shampoo</label>
+                <label class="strikethrough" for='item'>Shampoo</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Conditioner</label>
+                <label class="strikethrough" for='item'>Conditioner</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Bodywash</label>
+                <label class="strikethrough" for='item'>Bodywash</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Lotion</label>
+                <label class="strikethrough" for='item'>Lotion</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Sunscreen</label>
+                <label class="strikethrough" for='item'>Sunscreen</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Razor</label>
+                <label class="strikethrough" for='item'>Razor</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Hair dryer</label>
+                <label class="strikethrough" for='item'>Hair dryer</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Brush</label>
+                <label class="strikethrough" for='item'>Brush</label>
             </div>
             <div className='listitem'>
                 <input type='checkbox' id='item'/>
-                <label for='item'>Fragrance</label>
+                <label class="strikethrough" for='item'>Fragrance</label>
             </div>
         </div>
     )
