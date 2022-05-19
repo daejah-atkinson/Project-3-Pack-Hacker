@@ -67,7 +67,8 @@ const Misc = (props) =>{
             <div className='list-header'>
             <h1 >Misc</h1> 
             </div>
-            {misc.map((item, idx4)=>{
+            {// eslint-disable-next-line
+            misc.map((item, idx4)=>{
                 const deleteMisc = async () => {
                     await fetch(URL + misc[idx4]._id, {
                         method: "delete",
