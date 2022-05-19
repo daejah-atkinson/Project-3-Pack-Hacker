@@ -105,19 +105,21 @@ body{
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
+  color: #475053;
 }
 
 .loader span{
   font-size: 22px;
   text-transform: uppercase;
   margin: auto;
+  color: #475053;
 }
 
 .ball{
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: black;
+  background-color: #475053;
   animation: bounce .5s alternate infinite;
 }
 
