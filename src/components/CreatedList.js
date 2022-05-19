@@ -2,6 +2,7 @@ import Clothing from "./Clothing";
 import ToDo from "./ToDo";
 import Toiletries from "./Toiletries";
 import Misc from "./Misc";
+import Weather from "./Weather";
 
 const CreatedList = (props) =>{
     let weather = []
@@ -21,10 +22,15 @@ const CreatedList = (props) =>{
 
         return(
             <div className='list-container'>
-                <ToDo
+                <Weather
+                weather={weather}
+                allweather={props.weather}
                 date1={props.date1}
                 date2={props.date2}
-                destination={props.destination}/>
+                destination={props.destination}
+                temperature={theWeather}/>
+                <br/>
+                <ToDo/>
                 <br/>
                 <Clothing
                     weather={weather}

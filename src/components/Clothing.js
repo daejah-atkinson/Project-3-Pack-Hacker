@@ -46,12 +46,17 @@ const Clothing = (props) => {
         })
     }
     
-    const removeOne = (idx1) => document.getElementById(`id-${idx1}`).remove();
 
     return(
         <div className='listitem-container'>
-            <div className='list-header'><h2 >Clothing</h2></div> 
+            <div className='list-header'><h1 >Clothing</h1></div> 
         {clothing.map((item, idx1)=>{
+            const deleteClothes = async () => {
+                await fetch(URL + clothing[idx1]._id, {
+                    method: "delete",
+                })
+                getClothes()
+            }
             if(item.weather === 'all'){
                 return(
                     <>
@@ -61,7 +66,7 @@ const Clothing = (props) => {
                             <label class="strikethrough" for='item'> {item.clothing} </label>
                         </div>
                         <div className='delete-button'>
-                            <button onClick={() => removeOne(idx1)}>&#x1F5D1;</button>
+                            <button onClick={deleteClothes}>&#x1F5D1;</button>
                         </div>
                     </div>
                     </>
@@ -75,7 +80,7 @@ const Clothing = (props) => {
                             <label class="strikethrough" for='item'> {item.clothing} </label>
                         </div>
                         <div className='delete-button'>
-                            <button onClick={() => removeOne(idx1)}>&#x1F5D1;</button>
+                            <button onClick={deleteClothes}>&#x1F5D1;</button>
                         </div>
                     </div>
                     </>
@@ -90,7 +95,7 @@ const Clothing = (props) => {
                             <label class="strikethrough" for='item'> {item.clothing} </label>
                         </div>
                         <div className='delete-button'>
-                            <button onClick={() => removeOne(idx1)}>&#x1F5D1;</button>
+                            <button onClick={deleteClothes}>&#x1F5D1;</button>
                         </div>
                     </div>
                     </>

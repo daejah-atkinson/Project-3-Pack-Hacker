@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 
-const Toiletries = (props) => {
+const Toiletries = () => {
 
     const [toiletries, setToiletries] = useState([])
 
@@ -43,8 +43,6 @@ const Toiletries = (props) => {
             item:''
         })
     }
-    
-    const removeOne = (idx2) => document.getElementById(`id-${idx2}`).remove();
 
     return(
         <div className='listitem-container'>
@@ -53,21 +51,27 @@ const Toiletries = (props) => {
             </div>
             <>
             {toiletries.map((item, idx2)=>{
+                const deleteToiletries = async () => {
+                    await fetch(URL + toiletries[idx2]._id, {
+                        method: "delete",
+                    })
+                    getToiletries()
+                }
                 return(
-                    <div key={idx2} id={`id-${idx2}`} className='listitem'>
+                    <div key={idx2} className='listitem'>
                         <div className="listitem-name">
                             <input type='checkbox' />
                             <label class="strikethrough" for='item'> {item.item}</label>
                         </div>
                         <div className="delete-button">
-                            <button onClick={() => removeOne(idx2)}>&#x1F5D1;</button>
+                            <button onClick={deleteToiletries}>&#x1F5D1;</button>
                         </div>
                     </div>
                 )})}
             </>
             <div>
                 <form onSubmit={handleSubmit} className='listitem'>
-                    <input className = 'new-item' type='text' name='item' value={setNewToiletries.item} placeholder="Add new item" onChange={handleChange}/>
+                    <input className = 'new-item' name='item' type='text'  value={setNewToiletries.item} placeholder="Add new item" onChange={handleChange}/>
                     <button className='add-item'>+</button>
                 </form>
             </div>

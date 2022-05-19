@@ -1,6 +1,20 @@
 import {useEffect, useState} from 'react'
 
 const Misc = (props) =>{
+    let rain;
+    props.weather.map((item)=>{
+        if(item.includes('t-storms')){
+            rain = true;
+        } else if(item.includes('rain')){
+            rain = true;
+        } else if(item.includes('Thunderstorms')){
+            rain = true;
+        } else if(item.includes('Rainy')){
+            rain= true;
+        } else if(item.includes('showers')){
+            rain= true;
+        }
+    })
 
     const [misc, setMisc] = useState([])
 
@@ -46,14 +60,19 @@ const Misc = (props) =>{
         })
     }
     
-    const removeOne = (idx1) => document.getElementById(`id-${idx1}`).remove();
-
+    
     return(
         <div className='listitem-container'>
             <div className='list-header'>
             <h1 >Misc</h1>
             </div>
             {misc.map((item, idx4)=>{
+                const deleteMisc = async () => {
+                    await fetch(URL + misc[idx4]._id, {
+                        method: "delete",
+                        })
+                    getMisc()
+                    }
                 if(item.weather === 'all'){
                     return(
                         <>
@@ -63,12 +82,12 @@ const Misc = (props) =>{
                                 <label class="strikethrough" for='item'> {item.item} </label>
                             </div>
                             <div className='delete-button'>
-                                <button onClick={() => removeOne(idx4)} >&#x1F5D1;</button>
+                                <button onClick={deleteMisc} >&#x1F5D1;</button>
                             </div>
                         </div>
                         </>
                     )
-                } if((item.weather === 'rain' && props.weather.includes('rain')) || (item.weather === 'rain' && props.weather.includes('Thunderstorms')) || (item.weather === 'rain' && props.weather.includes('showers')) ){
+                } if(item.weather === 'rain' && rain){
                     return(
                         <>
                         <div className='listitem'>
@@ -77,7 +96,7 @@ const Misc = (props) =>{
                                 <label class="strikethrough" for='item'> {item.item} </label>
                             </div>
                             <div className='delete-button'>
-                                <button onClick={() => removeOne(idx4)} >&#x1F5D1;</button>
+                                <button onClick={deleteMisc} >&#x1F5D1;</button>
                             </div>
                         </div>
                         </>
