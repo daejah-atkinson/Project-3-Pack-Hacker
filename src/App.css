@@ -176,16 +176,10 @@ body{
 
 .weather{
   margin-left: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-.weather-p{
-  justify-self: flex-start;
 }
 
 .temps{
-  margin-left: 10px;
-  justify-self: flex-end;
+  margin-right: 10px;
 }
 
 .delete-button{

@@ -7,11 +7,7 @@ const Weather = (props) => {
     let difference = dateTwo.getTime() - dateOne.getTime()
     let days = difference / (1000 * 3600 * 24)
 
-    // let weather = props.weather;
-    console.log(props.temperature)
-    console.log(props.allweather)
     let allWeather = props.allweather.DailyForecasts
-
 
     return(
         <div className='listitem-container'>
@@ -23,8 +19,10 @@ const Weather = (props) => {
                return(
                 <div key={idx5} id={idx5}className='listitem'>
                 <div className="listitem-name weather">
-                    <p className='weather-p'>{item.Day.IconPhrase} </p> <p><span className='temps'> HIGH: {item.Temperature.Maximum.Value}{item.Temperature.Maximum.Unit} Low: {item.Temperature.Minimum.Value}{item.Temperature.Minimum.Unit}</span></p>
-                </div>
+                {item.Day.IconPhrase} 
+                </div> 
+                <div><span className='temps'> HIGH: {item.Temperature.Maximum.Value}{item.Temperature.Maximum.Unit} Low: {item.Temperature.Minimum.Value}{item.Temperature.Minimum.Unit}</span></div>
+                
                 </div>
                )
             })} 
