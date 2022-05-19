@@ -21,7 +21,7 @@ const Weather = (props) => {
                 <div className="listitem-name weather">
                 {item.Day.IconPhrase} 
                 </div> 
-                <div><span className='temps'> HIGH: {item.Temperature.Maximum.Value}{item.Temperature.Maximum.Unit} Low: {item.Temperature.Minimum.Value}{item.Temperature.Minimum.Unit}</span></div>
+                <div><span className='temps'> HIGH: {item.Temperature.Maximum.Value}&deg;{item.Temperature.Maximum.Unit} LOW: {item.Temperature.Minimum.Value}&deg;{item.Temperature.Minimum.Unit}</span></div>
                 
                 </div>
                )

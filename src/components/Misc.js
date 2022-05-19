@@ -18,7 +18,7 @@ const Misc = (props) =>{
 
     const [misc, setMisc] = useState([])
 
-    const URL = 'http://localhost:4005/misc/';
+    const URL = 'https://project-3-pack-hacker.herokuapp.com/misc/';
 
     const getMisc = () =>{
         fetch(URL)

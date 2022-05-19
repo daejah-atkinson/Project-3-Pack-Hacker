@@ -4,7 +4,7 @@ const Clothing = (props) => {
  
     const [clothing, setClothing] = useState([])
 
-    const URL = 'http://localhost:4005/clothes/';
+    const URL = 'https://project-3-pack-hacker.herokuapp.com/clothes/';
 
     const getClothes = () =>{
         fetch(URL)

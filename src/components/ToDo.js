@@ -4,7 +4,7 @@ const ToDo = (props)=>{
 
     const [toDo, setToDo] = useState([])
 
-    const URL = 'http://localhost:4005/todo/';
+    const URL = 'https://project-3-pack-hacker.herokuapp.com/todo/';
 
     const getToDo = () =>{
         fetch(URL)

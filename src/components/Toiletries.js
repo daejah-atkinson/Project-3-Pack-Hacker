@@ -4,7 +4,7 @@ const Toiletries = () => {
 
     const [toiletries, setToiletries] = useState([])
 
-    const URL = 'http://localhost:4005/toiletries/';
+    const URL = 'https://project-3-pack-hacker.herokuapp.com/toiletries/';
 
     const getToiletries = () =>{
         fetch(URL)
