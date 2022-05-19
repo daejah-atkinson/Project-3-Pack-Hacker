@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 
 const Misc = (props) =>{
     let rain;
+    // eslint-disable-next-line 
     props.weather.map((item)=>{
         if(item.includes('t-storms')){
             rain = true;
@@ -64,7 +65,7 @@ const Misc = (props) =>{
     return(
         <div className='listitem-container'>
             <div className='list-header'>
-            <h1 >Misc</h1>
+            <h1 >Misc</h1> 
             </div>
             {misc.map((item, idx4)=>{
                 const deleteMisc = async () => {
@@ -106,7 +107,7 @@ const Misc = (props) =>{
             })}
             <div>
                 <form onSubmit={handleSubmit} className='listitem'>
-                    <input className = 'new-item' name = 'item' type='text' value={setNewMisc.item}  placeholder="Add new item" onChange={handleChange}/>
+                    <input className = 'new-item' name = 'item' type='text' value={newMisc.item}  placeholder="Add new item" onChange={handleChange}/>
                     <button className='add-item'>+</button>
                 </form>
             </div>

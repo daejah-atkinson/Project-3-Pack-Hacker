@@ -3,6 +3,9 @@ import {useEffect, useState} from 'react'
 const ToDo = (props)=>{
 
     const [toDo, setToDo] = useState([])
+    const [newToDo, setNewToDo] = useState({
+        item: ''
+    });
 
     const URL = 'https://project-3-pack-hacker.herokuapp.com/todo/';
 
@@ -10,6 +13,9 @@ const ToDo = (props)=>{
         fetch(URL)
         .then(response => response.json())
         .then((result)=> setToDo(result))
+        .then(()=> {setNewToDo({
+            item:''
+        })}); 
     }
 
     const createToDo = async (item) => {
@@ -27,27 +33,30 @@ const ToDo = (props)=>{
     useEffect(()=> getToDo(), [])
 
     ///////////////////////////////////////////////////////
-    const [newToDo, setNewToDo] = useState({
-        item: ''
-    });
+    
 
     
     const handleChange = (event) => {
         setNewToDo({...newToDo,[event.target.name]: event.target.value})
+        console.log(newToDo)
     };
 
     const handleSubmit = (event) =>{
         event.preventDefault();
         createToDo(newToDo);
+        reset();
+    }
+
+    const reset = () => {
         setNewToDo({
             item:''
-        }); 
+        })
     }
 
     return(
         <div className='listitem-container'>
             <div className='list-header'>
-            <h1 >To Do</h1>
+            <h1>To Do</h1>
             </div>
             <>
             {toDo.map((item, idx3)=>{
@@ -71,8 +80,8 @@ const ToDo = (props)=>{
             </>
             <div>
                 <form onSubmit={handleSubmit} className='listitem'>
-                    <input className ='new-item' name='item' type='text'  value={setNewToDo.item} placeholder="Add new item" onChange={handleChange}/>
-                    <button className='add-item'>+</button>
+                    <input className ='new-item' name='item' type='text' value={newToDo.item} placeholder="Add new item" onChange={handleChange}/>
+                    <input className='add-item' type ='submit' value="+"/>
                 </form>
             </div>
         </div>

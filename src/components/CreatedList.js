@@ -17,7 +17,7 @@ const CreatedList = (props) =>{
          mintemp.push(newWeather.Temperature.Minimum.Value)
     }
 
-    let maxtempLowest = (Math.min(...maxtemp))
+    let maxtempLowest = (Math.max(...maxtemp))
     let mintempLowest = (Math.min(...mintemp))
 
         return(

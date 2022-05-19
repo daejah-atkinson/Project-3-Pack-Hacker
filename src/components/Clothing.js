@@ -105,7 +105,7 @@ const Clothing = (props) => {
         })}
             <div>
                 <form onSubmit={handleSubmit} className='listitem'>
-                    <input className = 'new-item' name='clothing' type='text' value={setNewClothing.clothing} placeholder="Add new item" onChange={handleChange}/>
+                    <input className = 'new-item' name='clothing' type='text' value={newClothing.clothing} placeholder="Add new item" onChange={handleChange}/>
                     <button className='add-item'>+</button>
                 </form>
             </div>

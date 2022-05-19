@@ -71,7 +71,7 @@ const Toiletries = () => {
             </>
             <div>
                 <form onSubmit={handleSubmit} className='listitem'>
-                    <input className = 'new-item' name='item' type='text'  value={setNewToiletries.item} placeholder="Add new item" onChange={handleChange}/>
+                    <input className = 'new-item' name='item' type='text'  value={newToiletries.item} placeholder="Add new item" onChange={handleChange}/>
                     <button className='add-item'>+</button>
                 </form>
             </div>
