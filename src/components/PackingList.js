@@ -29,7 +29,8 @@ const PackingList = (props) =>{
                 name={props.name}
                 key2={myKey}
                 date1={props.date1}
-                date2={props.date2}/>
+                date2={props.date2}
+                destination={props.destination}/>
         </div>
         )
     }   

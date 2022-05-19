@@ -26,7 +26,8 @@ const WeatherPackingList = (props) =>{
                 <CreatedList
                     weather={weather}
                     date1={props.date1}
-                    date2={props.date2}/>
+                    date2={props.date2}
+                    destination={props.destination}/>
             </div>
             )
         }   

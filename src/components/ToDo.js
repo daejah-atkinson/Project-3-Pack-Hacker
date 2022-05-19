@@ -35,7 +35,7 @@ const ToDo = (props)=>{
         <div className='listitem-container'>
             <div className='list-header'>
             <h1 >To Do</h1>
-            <p className='todo-p'>Things to do before your {days} day trip:</p>
+            <p className='todo-p'>Things to do before your {days} day trip to {props.destination}:</p>
             </div>
             <>
             {todo.map((item, idx)=>{
