@@ -1,46 +1,50 @@
+import {useEffect, useState} from 'react'
+
 const Toiletries = (props) => {
 
+    const [toiletries, setToiletries] = useState([])
 
-    const toiletries = [
-        {
-            item: "Toothbrush"
-        },
-        {
-            item: "Toothpaste"
-        },
-        {
-            item: "Deodorant"
-        },
-        {
-            item: "Shampoo"
-        },
-        {
-            item: "Conditioner"
-        },
-        {
-            item: "Bodywash"
-        },
-        {
-            item: "Lotion"
-        },
-        {
-            item: "Sunscreen"
-        },
-        {
-            item: "Razor"
-        },
-        {
-            item: "Hair dryer"
-        },
-        {
-            item: "Brush"
-        },
-        {
-            item: "Fragrance"
-        },
+    const URL = 'http://localhost:4005/toiletries/';
 
-    ];
+    const getToiletries = () =>{
+        fetch(URL)
+        .then(response => response.json())
+        .then((result)=> setToiletries(result))
+    }
 
+    const createToiletries = async (item) => {
+        await fetch(URL, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+		        body: JSON.stringify(item),
+        });
+        getToiletries();
+    };
+
+    
+    useEffect(()=> getToiletries(), [])
+
+    ///////////////////////////////////////////////////////
+    const [newToiletries, setNewToiletries] = useState({
+        item: "",
+    });
+
+    
+    const handleChange = (event) => {
+        setNewToiletries({...newToiletries,[event.target.name]: event.target.value})
+    };
+
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+        createToiletries(newToiletries);
+        setNewToiletries({
+            item:''
+        })
+    }
+    
+    const removeOne = (idx2) => document.getElementById(`id-${idx2}`).remove();
 
     return(
         <div className='listitem-container'>
@@ -48,22 +52,22 @@ const Toiletries = (props) => {
             <h1 >Toiletries</h1>
             </div>
             <>
-            {toiletries.map((item)=>{
+            {toiletries.map((item, idx2)=>{
                 return(
-                    <div className='listitem'>
+                    <div key={idx2} id={`id-${idx2}`} className='listitem'>
                         <div className="listitem-name">
                             <input type='checkbox' />
                             <label class="strikethrough" for='item'> {item.item}</label>
                         </div>
                         <div className="delete-button">
-                            <button>&#x1F5D1;</button>
+                            <button onClick={() => removeOne(idx2)}>&#x1F5D1;</button>
                         </div>
                     </div>
                 )})}
             </>
             <div>
-                <form className='listitem'>
-                    <input className = 'new-item' type='text' placeholder="Add new item"/>
+                <form onSubmit={handleSubmit} className='listitem'>
+                    <input className = 'new-item' type='text' name='item' value={setNewToiletries.item} placeholder="Add new item" onChange={handleChange}/>
                     <button className='add-item'>+</button>
                 </form>
             </div>
