@@ -6,7 +6,7 @@ const WeatherPackingList = (props) =>{
 
     let newKey = props.key2
     const apiKey = process.env.REACT_APP_API_KEY;
-    const weatherURL = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${newKey}?apikey=${apiKey}`;
+    const weatherURL = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${newKey}?apikey=${apiKey}`;
 
     const getWeather = async () => {
         const response = await fetch(weatherURL);
