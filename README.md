@@ -2,7 +2,7 @@
 
 ## Description
 
-Pack Hacker is a packing app to help people who have a hard time packing appropriately for trips. Users put in their travel destination and dates and the application gives them recommended items to pack based on weather information for the date and location they are traveling to.
+Pack Hacker is a packing application to help people who have a hard time packing appropriately for trips. Users put in their travel destination and dates and the application gives them recommended items to pack based on weather information for the date and location they are traveling to, such as a winter coat if it's going to be cold, a swimsuit if it's going to be hot, or an umbrella if it's going to rain. Users can delete unnecessary items from their their or add new items. 
 
 ## Screenshots
 
